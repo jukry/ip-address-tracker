@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <style> @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');</style>
+    <!-- LeafletJS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <!-- LeafletJS script -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin="">
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title>IP Address Tracker</title>
+</head>
+<body>
+
+    <main id="container">
+        <div id="wrapper">
+            <section id="lookup">
+                <h1>IP Address Tracker</h1>
+                <form id="input-box" onsubmit="return false">
+                    <input type="text" name="ip-address" autocomplete="off" placeholder="Search for any IP address" id="ip-input" autofocus>
+                    <input type="submit" value=">" id="input-submit" accesskey="enter">
+                </form>
+            </section>
+            <div id="ip-info">
+                <section id="ip-address">
+                    <h2>IP address</h2>
+                    <p id="ip-address-el"></p>
+                </section>
+                <section id="location">
+                    <h2>Location</h2>
+                    <p id="location-el"></p>
+                </section>
+                <section id="timezone">
+                    <h2>Timezone</h2>
+                    <p id="timezone-el"></p>
+                </section>
+                <section id="ISP">
+                    <h2>ISP</h2>
+                    <p id="ISP-el"></p>
+                </section>
+            </div>
+            <div id="map">
+                <script src="map.js"></script>
+            </div>
+            <div class="attribution">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+                Coded by <a href="https://github.com/jukry/">Jukka</a>.
+            </div>
+        </div>
+    </main>
+</body>
+</html>
