@@ -47,6 +47,7 @@ Users should be able to:
 ### What I learned
 
 - JavaScript
+  - Basic API implementation
   - LeafletJS
   - OpenStreetMap
   - jQuery
