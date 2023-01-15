@@ -22,10 +22,11 @@ function findIp(ip) {
             url: "https://geo.ipify.org/api/v1",
             data: {apiKey: api_key, ipAddress: ip},
             success: function(data) {
-                 let {ip, isp} = data   // destructure ip and isp data
-                 let {lat, lng, timezone,city,country,region} = data.location // destructure location data
-                 renderMap(lat,lng) // render the map using location data
-                 renderData(ip, isp, timezone, city, country, region) // render ip related data on page
+                let {ip, isp} = data   // destructure ip and isp data
+                let {lat, lng, timezone,city,country,region} = data.location // destructure location data
+                renderMap(lat,lng) // render the map using location data
+                renderData(ip, isp, timezone, city, country, region) // render ip related data on page
+                hoverIP(ip) // to show searched ip in the input box on hover
             }
          })
      })
@@ -59,6 +60,17 @@ function renderData(ip, isp, timezone, city, country, region) {
     locationEl.textContent = `${city}, ${region}, ${country}`
     timezoneEl.textContent = `UTC ${timezone}`
     ispEl.textContent = isp
+    
+}
+
+// function to show input ip on hover in inputBox
+function hoverIP(ip) {
+    inputBox.addEventListener("mouseover", () => {
+        inputBox.placeholder = ip
+    })
+    inputBox.addEventListener("mouseout", () => {
+        inputBox.placeholder = "Search for any IP address"
+    })
 }
 
 // use value in input box, pass to findIp function, jQuery so page doesn't refresh
@@ -70,3 +82,4 @@ $("#input-box").submit(function() {
 
 // init
 findIp(ip)
+
