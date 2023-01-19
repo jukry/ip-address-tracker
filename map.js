@@ -6,7 +6,7 @@ const timezoneEl = document.getElementById("timezone-el")
 const ispEl = document.getElementById("ISP-el")
 
 // using visible api-key in this client-side demo
-let api_key = "at_ZiucHp1OL3nmUrCztBBSJWfzzx3CZ"
+let api_key = "at_jVAMMPOPADyrv2u8uqzUfPp1Y8m5Z"
 
 // get user ip-address
 const jsonData = $.getJSON("https://api.ipify.org?format=json")
@@ -27,7 +27,8 @@ function findIp(ip) {
                 renderMap(lat,lng) // render the map using location data
                 renderData(ip, isp, timezone, city, country, region) // render ip related data on page
                 hoverIP(ip) // to show searched ip in the input box on hover
-            }
+            },
+            error: console.log("error")
          })
      })
 }
